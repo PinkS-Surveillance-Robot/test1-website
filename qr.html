@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Scanner</title>
+    <link rel="stylesheet" href="qr.css">
+</head>
+<body>
+
+    <!-- Main QR Scanning Section -->
+    <div class="qr-scanner" id="scan-section">
+        <a href="index.html"><button class="back-button" onclick="goBack()">←</button></a>
+        <div class="top-buttons" id="wallet">
+            <button class="pay-button" onclick="showScan()">Pay</button>
+            <button class="receive-button" onclick="showReceive()">Receive</button>
+        </div>
+
+        <!-- Logo above the scanner -->
+        <div class="logo-container">
+            <img src="https://i.pinimg.com/736x/d4/61/11/d461114c7def9da872bd4269c2e64482.jpg" alt="Logo" class="logo">
+            <p>Scan QR</p>
+        </div>
+
+        <!-- Camera Stream with Overlay -->
+        <div class="camera-container">
+            <video id="camera-stream" autoplay playsinline></video>
+            <div class="qr-overlay"></div>
+        </div>
+
+        <div class="gallery-button">
+            <button onclick="openGallery()">Scan from gallery</button>
+        </div>
+    </div>
+
+    <!-- Receiving QR Section -->
+    <div class="qr-receive" id="receive-section" style="display: none;">
+        <button class="back-button" onclick="goBack()">←</button>
+        <div class="top-buttons">
+            <button class="pay-button" onclick="showScan()">Pay</button>
+            <button class="receive-button active">Receive</button>
+        </div>
+
+        <div class="qr-code-display">
+            <div class="qr-image">
+                <img src="https://i.pinimg.com/736x/f3/3d/3a/f33d3a3d01cf1bd5b771b6a600ad8324.jpg" alt="Receiving QR Code">
+            </div>
+            <p class="qr-label">MALAYSIA NATIONAL QR</p>
+            <p class="account-name">John Doe</p>
+            <p class="account-info">****3909 • SDAS Account</p>
+            <p class="instruction">Show this QR to your friends or family to receive money</p>
+        </div>
+
+        <div class="share-button">
+            <button>Share QR</button>
+        </div>
+    </div>
+
+    <script>
+        // Function to show the scanning section
+function showScan() {
+    document.getElementById("scan-section").style.display = "flex";
+    document.getElementById("receive-section").style.display = "none";
+    startCamera();
+}
+
+// Function to show the receiving QR code section
+function showReceive() {
+    document.getElementById("scan-section").style.display = "none";
+    document.getElementById("receive-section").style.display = "flex";
+}
+
+// Function for the back button to go to the scanning section
+function goBack() {
+    showScan();
+}
+
+// Function to access the user's camera and display it in the video element
+async function startCamera() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+        const video = document.getElementById('camera-stream');
+        video.srcObject = stream;
+    } catch (error) {
+        console.error("Camera access error: ", error);
+        alert("Unable to access camera. Please check your camera permissions.");
+    }
+}
+
+// Function to simulate scanning from gallery (for demonstration purposes)
+function openGallery() {
+    alert("Feature to scan from gallery is under development.");
+}
+
+// Start the camera when the page loads
+window.onload = startCamera;
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+
+}
+.deposit-container{
+    background-color: #FFCD00;
+}
+.deposit-content {
+    text-align: center;
+}
+
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.title-container .icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.title-container h2 {
+    font-size: 1.4em;
+    color: #171717;
+    margin: 0;
+}
+
+.amount-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #000000;
+    border-bottom: 2px solid #2f2f2f;
+    padding: 10px 0;
+    margin: 20px 0;
+}
+
+.amount-input .currency {
+    margin-right: 5px;
+}
+
+.amount-input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #000000;
+    font-size: 1.8em;
+    text-align: left;
+    width: 100px;
+}
+
+.minimum-amount {
+    color: #161616;
+    font-size: 0.9em;
+    margin-bottom: 20px;
+}
+.deposit-container {
+    width: 100%;
+    max-width: 500px;
+    padding: 50px 50px;
+    text-align: center;
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+    .title-container {
+        display: flex;
+        align-items: center;
+        justify-content: center; /* Center the content horizontally */
+        gap: 20px; /* Space between icon and text */
+    }
+    
+    .title-container .icon {
+        width: 40px; /* Adjust as needed */
+        height: 40px; /* Adjust as needed */
+        border-radius: 15px;
+
+    }
+    
+    .title-container h2 {
+        font-size: 1.4em;
+        color: #1b1b1b;
+        margin: 0;
+    }
+.navigation-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.back-button, .home-button {
+    font-size: 22px;
+    color: #000000;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px; /* Increase padding for more space */
+    transition: color 0.3s ease;
+}
+
+
+.back-button:hover, .home-button:hover {
+    color: #010101;
+}
+
+.deposit-content h2 {
+    font-size: 1.4em;
+    margin-bottom: 25px;
+    color: #000000;
+}
+.amount-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+    color: #0c0c0c;
+    border-bottom: 2px solid #313131;
+    padding: 10px 0;
+    margin: 20px 0 30px;
+    gap: 5px; /* Add gap between currency and input */
+}
+
+.amount-input .currency {
+    font-weight: bold;
+}
+
+.amount-input input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #232323;
+    font-size: 1.8em;
+    text-align: left;
+    width: 100%; /* Take full width available within flex */
+    max-width: 200px; /* Optional: Limit the maximum width */
+    min-width: 0; /* Ensure it doesn't overflow */
+}
+
+.minimum-amount {
+    color: #2a2a2a;
+    font-size: 0.9em;
+    margin-bottom: 25px;
+}
+
+.preset-amounts {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.preset-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.preset-button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.next-button {
+    position: absolute;
+    bottom: -10px; /* Move further from the bottom */
+    right: 30px; /* Move further from the right */
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 15px 20px; /* Increase padding for a larger button */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.next-button:hover {
+    background-color: #2f2f2f;
+    transform: scale(1.1);
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 600px) {
+    .deposit-container {
+        padding: 20px 15px;
+    }
+    
+    .amount-input {
+        font-size: 1.5em;
+    }
+    .deposit-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px 20px;
+    text-align: center;
+    position: relative;
+    background-color: #1c1538;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.navigation-buttons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    display: flex;
+    gap: 15px;
+}
+
+.back-button, .home-button {
+    font-size: 22px;
+    color: #ffffff;
+    text-decoration: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    transition: color 0.3s ease;
+}
+
+.back-button:hover, .home-button:hover {
+    color: #bbbbbb;
+}
+
+.preset-amounts {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 60px; /* Increase bottom margin to separate from Next button */
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.preset-button {
+    background-color: #313131;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 25px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+}
+
+.preset-button:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+.next-button {
+    position: absolute;
+    bottom: 30px; /* Move further from the bottom */
+    right: 30px; /* Move further from the right */
+    background-color: #333;
+    color: #fff;
+    font-size: 1.5em;
+    padding: 15px 20px; /* Increase padding for a larger button */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.next-button:hover {
+    background-color: #555;
+    transform: scale(1.1);
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 600px) {
+    .deposit-container {
+        padding: 20px 15px;
+    }
+    
+    .amount-input {
+        font-size: 1.5em;
+    }
+
+    .amount-input input {
+        font-size: 1.5em;
+    }
+
+    .preset-amounts {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .preset-button {
+        width: 100%;
+        padding: 12px 0;
+        font-size: 1.1em;
+    }
+
+    .next-button {
+        bottom: 20px;
+        right: 20px;
+        font-size: 1.3em;
+        padding: 10px 15px;
+    }
+}
+}
